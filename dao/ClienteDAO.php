@@ -93,6 +93,46 @@
             }
             
         }
+        public function buscarClientePorId(int $id)
+        {
+            
+            $con = Conexao::getCon();
+            
+            $sql = "SELECT * FROM clientes WHERE id = ?";
+            
+            $stm = $con->prepare($sql);
+            $stm->execute(array($id));
+            
+            $registro = $stm->fetch();
+            
+            $cliente = NULL;
+            
+            if($registro["tipo"] == "F")
+            {
+                
+                $cliente = new ClientePF();
+                $cliente->setId($registro["id"]);
+                $cliente->setNomeSocial($registro["nome_social"]);
+                $cliente->setEmail($registro["email"]);
+                $cliente->setNome($registro["nome"]);
+                $cliente->setCpf($registro["cpf"]);
+                
+            }
+            else if($registro["tipo"] == "J")
+            {
+                
+                $cliente = new ClientePJ();
+                $cliente->setId($registro["id"]);
+                $cliente->setNomeSocial($registro["nome_social"]);
+                $cliente->setEmail($registro["email"]);
+                $cliente->setRazaoSocial($registro["razao_social"]);
+                $cliente->setCnpj($registro["cnpj"]);
+                
+            }
+            
+            return $cliente;
+            
+        }
         
         private function mapClientes(array $registros)
         {

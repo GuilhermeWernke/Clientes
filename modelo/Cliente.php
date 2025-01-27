@@ -15,8 +15,19 @@
         public abstract function getNroDoc();
         public abstract function getTipo();
         
-        // GETS & SETS
+        // ToString
         
+        public function __toString()
+        {
+            
+            return 
+            "ID: " . $this->id . "\n" .
+            "Nome Social: " . $this->nomeSocial . "\n" .
+            "E-mail: " . $this->email . "\n";
+            
+        }
+        
+        // GETS & SETS
         
         /**
          * Get the value of id

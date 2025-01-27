@@ -94,7 +94,12 @@
             
             case 4:
                 
-                # code...
+                $clienteDAO = new ClienteDAO();
+                
+                print($clienteDAO->buscarClientePorId(readline("Informe o ID do cliente: ")));
+                
+                readline("Pressione Enter para continuar...");
+                system("clear");
                 
             break;
             
@@ -106,7 +111,12 @@
             
             case 0:
                 
-                # code...
+                system("clear");
+                
+                print("Salvando Alterações... \n");
+                sleep(rand(1, 3));
+                
+                system("clear");
                 
             break;
             

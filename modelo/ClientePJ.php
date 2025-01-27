@@ -33,8 +33,19 @@
             
         }
         
-        // GETS & SETS
+        // ToString
         
+        public function __toString()
+        {
+            
+            return 
+            parent::__toString() .
+            "Razão Social: " . $this->razaoSocial . "\n" .
+            "CNPJ: " . $this->CNPJ . "\n";
+            
+        }
+        
+        // GETS & SETS
         
         /**
          * Get the value of razaoSocial

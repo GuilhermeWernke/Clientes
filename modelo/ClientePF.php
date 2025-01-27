@@ -33,6 +33,18 @@
             
         }
         
+        // ToString
+        
+        public function __toString()
+        {
+            
+            return 
+            parent::__toString() .
+            "CPF: " . $this->cpf . "\n" .
+            "Nome: " . $this->nome . "\n";
+            
+        }
+        
         
         // GETS & SETS
         
