@@ -10,23 +10,23 @@
     do
     {
         
-        print("\033[1;44m╔═══════════════╣\033[m  Cadastro de Clientes  \033[1;44m╠════════════════╗\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                    Escolha uma opção:                   \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                 1- Cadastrar Cliente PF                 \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                 2- Cadastrar Cliente PJ                 \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                   3- Listar Clientes                    \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                    4- Buscar Cliente                    \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                   5- Excluir Cliente                    \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                         0- Sair                         \033[1;44m║\033[m \n");
-        print("\033[1;44m║\033[m                                                         \033[1;44m║\033[m \n");
-        print("\033[1;44m╚═════════════════════════════════════════════════════════╝\033[m \n");
+        print("\033[1;44m ╔═══════════════╣\033[m  Cadastro de Clientes  \033[1;44m╠══════════════════╗ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                    Escolha uma opção:                   \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                 1- Cadastrar Cliente PF                 \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                 2- Cadastrar Cliente PJ                 \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                   3- Listar Clientes                    \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                    4- Buscar Cliente                    \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                   5- Excluir Cliente                    \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                         0- Sair                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ║ \033[m                                                         \033[1;44m ║ \033[m \n");
+        print("\033[1;44m ╚═══════════════════════════════════════════════════════════╝ \033[m \n");
         $opcao = readline();
         system("clear");
         
@@ -105,7 +105,13 @@
             
             case 5:
                 
-                # code...
+                $clienteDAO = new ClienteDAO();
+                
+                $clienteDAO->excluirCliente(readline("Informe o ID do cliente: "));
+                
+                print("Cliente excluído com sucesso! \n");
+                readline("Pressione Enter para continuar...");
+                system("clear");
                 
             break;
             
@@ -132,6 +138,9 @@
         }
         
     } while ($opcao != 0)
+    
+    
+    
     
     
     
